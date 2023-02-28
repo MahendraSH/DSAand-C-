@@ -1,0 +1,170 @@
+slinding window
+____________________
+bout force approche
+1)(displaySUbSetele.cpp) and 2)(findThemaxSum.cpp)
+________________________
+slinding window
+3)(findmaxsumUsingSlw.cpp)
+4)(findminsumUsingSlw)
+----------------------------
+1)
+brout force approche
+display subset with given value
+-->
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n;
+    cin >> n;
+    int a[n];
+    for (int i = 0; i < n; i++)
+    {
+        cin >> a[i];
+    }
+    int w;
+    cin>>w;
+    
+    for(int i=0;i<n-w+1;i++)
+    {
+        for(int j=i;j<i+w ;j++)
+        {
+            cout<<a[j]<<" ";
+        }
+        cout<<endl;
+    }
+
+}
+---------------------------------------------
+2)max sum of subset in an array
+--->
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n;
+    cin >> n;
+    int a[n];
+    for (int i = 0; i < n; i++)
+    {
+        cin >> a[i];
+    }
+    int w;
+    cin>>w;
+    int max=INT_MIN;
+    for(int i=0;i<n-w+1;i++)
+    {
+        
+    int sum=0;
+        for(int j=i;j<i+w ;j++)
+        {
+           sum+=a[j];
+        }
+        if(sum>max)
+        {
+             max=sum;
+        }
+    }
+    cout<<max<<endl;
+
+}
+------------------------------------------------------
+3)
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    int a[n];
+    for(int i=0;i<n;i++){
+        cin>>a[i];
+    }
+    int max=INT_MIN;
+    int sum=0;
+    int w;
+    cin>>w;
+    if(w<=n){
+    //0 to n-1
+    // 0 to w-1 ,1 to w ....
+   for(int i=0;i<w;i++)
+   {
+        sum+=a[i];
+   }
+   max=sum;
+   for(int i=w;i<n;i++)
+   {
+       sum-=a[i-w];
+       sum+=a[i];
+           if(max<sum)
+           max=sum;
+   }
+    }
+    
+   cout<<max<<endl;
+
+}
+-----or------
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    int a[n];
+    for(int i=0;i<n;i++){
+        cin>>a[i];
+    }
+    int mx=INT_MIN;
+    int sum=0;
+    int w;
+    cin>>w;
+   for( int j=0 ,i=0; j<n;j++)
+   {
+    sum+=a[j];
+    
+    if(j-i+1== w)
+    {
+        mx=max(mx,sum);
+        sum-=a[i];
+        i++;
+
+    }
+      
+   }
+    
+   cout<<mx<<endl;
+}
+-------------------------------------
+4)findminsumUsingSlw
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    int a[n];
+    for(int i=0;i<n;i++){
+        cin>>a[i];
+    }
+    int mi=INT_MAX;
+    int sum=0;
+    int w;
+    cin>>w;
+   for( int j=0 ,i=0; j<n;j++)
+   {
+    sum+=a[j];
+    
+    if(j-i+1== w)
+    {
+        mi=min(mi,sum);
+        sum-=a[i];
+        i++;
+
+    }
+      
+   }
+    
+   cout<<mi<<endl;
+
+}
