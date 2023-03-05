@@ -1,6 +1,6 @@
-## #Sliding window
+# Sliding window
 
-##constatant size sliding window
+## constatant size sliding window
 
 <ol>
 <li> 
@@ -24,4 +24,4 @@ max ele in subarray of gven size
 
 ---
 
-##variable size sliding window
+## variable size sliding window
