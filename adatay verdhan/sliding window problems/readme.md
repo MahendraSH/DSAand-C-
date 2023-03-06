@@ -25,3 +25,6 @@ max ele in subarray of gven size
 ---
 
 ## variable size sliding window
+<li>
+longest subbarry fo given sum k all elemets  are +ve
+</li>
